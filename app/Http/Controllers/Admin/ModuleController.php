@@ -133,4 +133,3 @@ class ModuleController extends Controller
             ->with('success', "Module {$status} successfully!");
     }
 }
-

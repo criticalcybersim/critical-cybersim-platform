@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Models\UserProgress;
+use App\Models\Achievement;
 use App\Models\SimulationModule;
 use App\Models\SimulationSession;
-use App\Models\Achievement;
-use Illuminate\Http\Request;
-use Inertia\Inertia;
+use App\Models\UserProgress;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class LearningController extends Controller
 {

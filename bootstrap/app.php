@@ -6,6 +6,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Symfony\Component\HttpFoundation\Response;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -27,20 +30,19 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->redirectGuestsTo(fn () => route('login'));
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        $exceptions->respond(function (\Symfony\Component\HttpFoundation\Response $response, \Throwable $exception, \Illuminate\Http\Request $request) {
-            if (!app()->environment('local', 'testing') && in_array($response->getStatusCode(), [404, 403, 419, 429, 500, 503])) {
+        $exceptions->respond(function (Response $response, Throwable $exception, Request $request) {
+            if (! app()->environment('local', 'testing') && in_array($response->getStatusCode(), [404, 403, 419, 429, 500, 503])) {
                 $debug = $request->query('debug') === '1' && config('app.debug');
-                
+
                 if ($response->getStatusCode() === 404) {
-                    return \Inertia\Inertia::render('Errors/404', [
+                    return Inertia::render('Errors/404', [
                         'debug' => $debug,
                         'error' => $debug ? [
                             'message' => $exception->getMessage() ?: 'Page not found',
                             'file' => $exception->getFile(),
                             'line' => $exception->getLine(),
                             'trace' => array_slice(
-                                array_map(fn($trace) => 
-                                    ($trace['file'] ?? 'unknown') . ':' . ($trace['line'] ?? 'unknown') . ' - ' . ($trace['function'] ?? 'unknown'),
+                                array_map(fn ($trace) => ($trace['file'] ?? 'unknown').':'.($trace['line'] ?? 'unknown').' - '.($trace['function'] ?? 'unknown'),
                                     $exception->getTrace()
                                 ),
                                 0,
@@ -49,8 +51,8 @@ return Application::configure(basePath: dirname(__DIR__))
                         ] : null,
                     ])->toResponse($request)->setStatusCode(404);
                 }
-                
-                return \Inertia\Inertia::render('Errors/Error', [
+
+                return Inertia::render('Errors/Error', [
                     'status' => $response->getStatusCode(),
                     'message' => $exception->getMessage(),
                     'debug' => $debug,
@@ -60,8 +62,7 @@ return Application::configure(basePath: dirname(__DIR__))
                         'file' => $exception->getFile(),
                         'line' => $exception->getLine(),
                         'trace' => array_slice(
-                            array_map(fn($trace) => 
-                                ($trace['file'] ?? 'unknown') . ':' . ($trace['line'] ?? 'unknown') . ' - ' . ($trace['function'] ?? 'unknown'),
+                            array_map(fn ($trace) => ($trace['file'] ?? 'unknown').':'.($trace['line'] ?? 'unknown').' - '.($trace['function'] ?? 'unknown'),
                                 $exception->getTrace()
                             ),
                             0,

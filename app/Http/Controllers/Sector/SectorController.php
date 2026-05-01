@@ -43,7 +43,7 @@ class SectorController extends Controller
         // Calculate user's progress in this sector (only if authenticated)
         $totalModules = $sector->simulationModules->count();
         $completedModules = 0;
-        
+
         if ($user) {
             $completedModules = $user->progress()
                 ->where('status', 'completed')

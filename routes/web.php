@@ -5,7 +5,6 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\ModuleController as AdminModuleController;
 use App\Http\Controllers\Admin\ScenarioController as AdminScenarioController;
 use App\Http\Controllers\Admin\UserProgressController;
-use App\Http\Controllers\User\LearningController;
 use App\Http\Controllers\Analytics\AnalyticsController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\LandingController;
@@ -13,6 +12,7 @@ use App\Http\Controllers\Leaderboard\LeaderboardController;
 use App\Http\Controllers\Sector\SectorController;
 use App\Http\Controllers\Simulation\SimulationController;
 use App\Http\Controllers\Training\TrainingController;
+use App\Http\Controllers\User\LearningController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 

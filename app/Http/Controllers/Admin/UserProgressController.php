@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use App\Models\UserProgress;
 use App\Models\SimulationModule;
 use App\Models\SimulationSession;
-use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\UserProgress;
 use Inertia\Inertia;
-use Illuminate\Support\Facades\DB;
 
 class UserProgressController extends Controller
 {

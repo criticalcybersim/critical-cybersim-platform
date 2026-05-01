@@ -29,7 +29,7 @@ class ErrorController extends Controller
     /**
      * Render a generic error page
      */
-    public function show(Request $request, int $status = 500, string $message = null, Throwable $exception = null)
+    public function show(Request $request, int $status = 500, ?string $message = null, ?Throwable $exception = null)
     {
         $debug = $request->query('debug') === '1' && config('app.debug');
 
@@ -46,8 +46,7 @@ class ErrorController extends Controller
                 'file' => $exception->getFile(),
                 'line' => $exception->getLine(),
                 'trace' => array_slice(
-                    array_map(fn($trace) => 
-                        ($trace['file'] ?? 'unknown') . ':' . ($trace['line'] ?? 'unknown') . ' - ' . ($trace['function'] ?? 'unknown'),
+                    array_map(fn ($trace) => ($trace['file'] ?? 'unknown').':'.($trace['line'] ?? 'unknown').' - '.($trace['function'] ?? 'unknown'),
                         $exception->getTrace()
                     ),
                     0,

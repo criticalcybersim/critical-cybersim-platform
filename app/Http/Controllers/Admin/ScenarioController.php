@@ -111,4 +111,3 @@ class ScenarioController extends Controller
             ->with('success', 'Scenarios reordered successfully!');
     }
 }
-

@@ -36,16 +36,10 @@ interface PopularModule {
     sessions: number;
 }
 
-interface ActivityDataItem {
-    date: string;
-    count: number;
-}
-
 interface Props {
     stats: Stats;
     recentUsers: RecentUser[];
     popularModules: PopularModule[];
-    activityData: ActivityDataItem[];
 }
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -53,18 +47,8 @@ const breadcrumbs: BreadcrumbItem[] = [
     { title: 'Dashboard', href: '/admin/dashboard' },
 ];
 
-export default function AdminDashboard({ stats, recentUsers, popularModules, activityData }: Props) {
+export default function AdminDashboard({ stats, recentUsers, popularModules }: Props) {
     const [activeTab, setActiveTab] = useState<'overview' | 'modules' | 'users'>('overview');
-
-    // Activity data for future implementation
-    // const activityData = [
-    //     { icon: '🤖', title: 'AI Training Assistant', desc: 'Real-time guidance and personalized hints', color: 'purple' },
-    //     { icon: '🧠', title: 'Intelligent Scenarios', desc: 'Dynamic threat scenarios from real-world intel', color: 'blue' },
-    //     { icon: '📈', title: 'Adaptive Learning', desc: 'Personalized progression based on performance', color: 'green' },
-    //     { icon: '💬', title: 'Automated Feedback', desc: 'AI-generated insights on decisions', color: 'orange' },
-    //     { icon: '🔍', title: 'Threat Intelligence', desc: 'Live data from CISA, FBI, and industry', color: 'red' },
-    //     { icon: '📊', title: 'Performance Analytics', desc: 'ML-powered team readiness insights', color: 'cyan' }
-    // ];
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>

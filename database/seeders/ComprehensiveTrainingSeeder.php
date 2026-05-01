@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\SimulationModule;
 use App\Models\Sector;
+use App\Models\SimulationModule;
 use App\Models\TrainingScenario;
 use Illuminate\Database\Seeder;
 
@@ -30,7 +30,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     'Identify SCADA system vulnerabilities',
                     'Implement ICS security controls',
                     'Respond to grid manipulation attempts',
-                    'Apply NIST framework to energy infrastructure'
+                    'Apply NIST framework to energy infrastructure',
                 ],
                 'prerequisites' => ['Basic networking knowledge', 'Understanding of SCADA systems'],
                 'is_published' => true,
@@ -48,7 +48,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     ['id' => 'isolate', 'title' => 'Immediately isolate affected RTUs', 'description' => 'Disconnect suspicious RTUs from network', 'impact' => 'high_security'],
                     ['id' => 'monitor', 'title' => 'Continue monitoring and gather intel', 'description' => 'Allow connection to learn attack vector', 'impact' => 'high_risk'],
                     ['id' => 'block_ip', 'title' => 'Block source IP at firewall', 'description' => 'Prevent further connection attempts', 'impact' => 'medium_security'],
-                    ['id' => 'notify', 'title' => 'Notify leadership before action', 'description' => 'Escalate and await guidance', 'impact' => 'time_loss']
+                    ['id' => 'notify', 'title' => 'Notify leadership before action', 'description' => 'Escalate and await guidance', 'impact' => 'time_loss'],
                 ],
                 'correct_actions' => ['block_ip', 'isolate'],
                 'max_score' => 100,
@@ -67,7 +67,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     ['id' => 'quarantine', 'title' => 'Quarantine workstation immediately', 'description' => 'Isolate infected system', 'impact' => 'prevents_spread'],
                     ['id' => 'sandbox', 'title' => 'Move to sandbox for analysis', 'description' => 'Safely analyze malware behavior', 'impact' => 'intelligence_gain'],
                     ['id' => 'delete', 'title' => 'Delete file and continue monitoring', 'description' => 'Remove threat', 'impact' => 'evidence_loss'],
-                    ['id' => 'restore', 'title' => 'Restore system from backup', 'description' => 'Clean slate approach', 'impact' => 'data_loss']
+                    ['id' => 'restore', 'title' => 'Restore system from backup', 'description' => 'Clean slate approach', 'impact' => 'data_loss'],
                 ]),
                 'correct_actions' => json_encode(['quarantine', 'sandbox']),
                 'max_score' => 100,
@@ -86,7 +86,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     ['id' => 'manual_override', 'title' => 'Switch to manual control', 'description' => 'Take human control of grid management', 'impact' => 'stabilizes_grid'],
                     ['id' => 'emergency_shutdown', 'title' => 'Initiate emergency shutdown', 'description' => 'Controlled blackout to prevent damage', 'impact' => 'safe_but_disruptive'],
                     ['id' => 'trace_attack', 'title' => 'Trace attack source first', 'description' => 'Identify attacker before responding', 'impact' => 'cascading_failure_risk'],
-                    ['id' => 'contact_cisa', 'title' => 'Contact CISA for guidance', 'description' => 'Get federal assistance', 'impact' => 'time_delay']
+                    ['id' => 'contact_cisa', 'title' => 'Contact CISA for guidance', 'description' => 'Get federal assistance', 'impact' => 'time_delay'],
                 ]),
                 'correct_actions' => json_encode(['manual_override']),
                 'max_score' => 100,
@@ -111,7 +111,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     'Execute ransomware incident response procedures',
                     'Prioritize patient safety in cyber incidents',
                     'Manage healthcare system recovery',
-                    'Comply with HIPAA during security incidents'
+                    'Comply with HIPAA during security incidents',
                 ],
                 'prerequisites' => ['Healthcare IT knowledge', 'Incident response fundamentals', 'HIPAA compliance basics'],
                 'is_published' => true,
@@ -128,7 +128,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     ['id' => 'segment_network', 'title' => 'Emergency network segmentation', 'description' => 'Isolate infected systems immediately', 'impact' => 'contains_spread'],
                     ['id' => 'activate_downtime', 'title' => 'Activate downtime procedures', 'description' => 'Switch to paper-based patient care', 'impact' => 'maintains_patient_care'],
                     ['id' => 'contact_fbi', 'title' => 'Notify FBI immediately', 'description' => 'Get law enforcement involved', 'impact' => 'legal_requirement'],
-                    ['id' => 'restore_backups', 'title' => 'Begin backup restoration', 'description' => 'Start recovery process', 'impact' => 'recovery_start']
+                    ['id' => 'restore_backups', 'title' => 'Begin backup restoration', 'description' => 'Start recovery process', 'impact' => 'recovery_start'],
                 ]),
                 'correct_actions' => json_encode(['segment_network', 'activate_downtime', 'contact_fbi']),
                 'max_score' => 100,
@@ -146,7 +146,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     ['id' => 'emergency_checks', 'title' => 'Emergency clinical verification', 'description' => 'Manually verify critical devices', 'impact' => 'patient_safety'],
                     ['id' => 'isolate_mdn', 'title' => 'Isolate entire MDN', 'description' => 'Disconnect all medical devices', 'impact' => 'care_disruption'],
                     ['id' => 'replace_critical', 'title' => 'Replace ICU devices with backups', 'description' => 'Swap suspected compromised devices', 'impact' => 'resource_intensive'],
-                    ['id' => 'continue_use', 'title' => 'Continue monitoring devices', 'description' => 'No immediate action', 'impact' => 'patient_risk']
+                    ['id' => 'continue_use', 'title' => 'Continue monitoring devices', 'description' => 'No immediate action', 'impact' => 'patient_risk'],
                 ]),
                 'correct_actions' => json_encode(['emergency_checks', 'replace_critical']),
                 'max_score' => 100,
@@ -171,7 +171,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     'Secure water treatment control systems',
                     'Detect chemical manipulation attempts',
                     'Implement ICS security for water utilities',
-                    'Coordinate with EPA and public health'
+                    'Coordinate with EPA and public health',
                 ],
                 'prerequisites' => ['Water treatment process knowledge', 'SCADA security fundamentals'],
                 'is_published' => true,
@@ -188,7 +188,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     ['id' => 'emergency_shutoff', 'title' => 'Emergency chlorine shutoff', 'description' => 'Stop chemical feed immediately', 'impact' => 'prevents_harm'],
                     ['id' => 'flush_system', 'title' => 'Activate distribution flushing', 'description' => 'Flush contaminated water from pipes', 'impact' => 'removes_contamination'],
                     ['id' => 'public_alert', 'title' => 'Issue do-not-consume alert', 'description' => 'Warn public immediately', 'impact' => 'public_safety'],
-                    ['id' => 'investigate_first', 'title' => 'Investigate extent before action', 'description' => 'Assess full situation', 'impact' => 'exposure_continues']
+                    ['id' => 'investigate_first', 'title' => 'Investigate extent before action', 'description' => 'Assess full situation', 'impact' => 'exposure_continues'],
                 ]),
                 'correct_actions' => json_encode(['emergency_shutoff', 'flush_system', 'public_alert']),
                 'max_score' => 100,
@@ -213,7 +213,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     'Implement DDoS mitigation strategies',
                     'Maintain financial service availability',
                     'Coordinate with Treasury and FinCEN',
-                    'Manage customer communications during attacks'
+                    'Manage customer communications during attacks',
                 ],
                 'prerequisites' => ['Network security basics', 'Banking system fundamentals'],
                 'is_published' => true,
@@ -230,7 +230,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     ['id' => 'activate_cdn', 'title' => 'Activate CDN DDoS protection', 'description' => 'Route through scrubbing center', 'impact' => 'mitigates_attack'],
                     ['id' => 'rate_limiting', 'title' => 'Implement aggressive rate limiting', 'description' => 'Limit connection attempts', 'impact' => 'partial_mitigation'],
                     ['id' => 'backup_datacenter', 'title' => 'Failover to backup datacenter', 'description' => 'Switch to alternate infrastructure', 'impact' => 'restores_service'],
-                    ['id' => 'wait_it_out', 'title' => 'Wait for attack to subside', 'description' => 'No action - monitor', 'impact' => 'continued_outage']
+                    ['id' => 'wait_it_out', 'title' => 'Wait for attack to subside', 'description' => 'No action - monitor', 'impact' => 'continued_outage'],
                 ]),
                 'correct_actions' => json_encode(['activate_cdn', 'backup_datacenter']),
                 'max_score' => 100,
@@ -255,7 +255,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     'Secure aviation operational technology',
                     'Protect air traffic safety systems',
                     'Manage airport cyber incidents',
-                    'Coordinate with TSA and FAA'
+                    'Coordinate with TSA and FAA',
                 ],
                 'prerequisites' => ['Aviation systems knowledge', 'OT security fundamentals'],
                 'is_published' => true,
@@ -272,7 +272,7 @@ class ComprehensiveTrainingSeeder extends Seeder
                     ['id' => 'manual_processing', 'title' => 'Switch to manual baggage processing', 'description' => 'Labor-intensive but functional', 'impact' => 'maintains_operations'],
                     ['id' => 'delay_flights', 'title' => 'Delay all affected flights', 'description' => 'Buy time to restore systems', 'impact' => 'passenger_disruption'],
                     ['id' => 'pay_ransom', 'title' => 'Consider paying ransom', 'description' => 'Quick restoration possibility', 'impact' => 'funds_criminals'],
-                    ['id' => 'restore_from_backup', 'title' => 'Emergency backup restoration', 'description' => 'Restore systems (4-6 hours)', 'impact' => 'extended_delays']
+                    ['id' => 'restore_from_backup', 'title' => 'Emergency backup restoration', 'description' => 'Restore systems (4-6 hours)', 'impact' => 'extended_delays'],
                 ]),
                 'correct_actions' => json_encode(['manual_processing', 'restore_from_backup']),
                 'max_score' => 100,

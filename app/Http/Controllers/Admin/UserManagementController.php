@@ -8,4 +8,3 @@ class UserManagementController extends Controller
 {
     //
 }
-
