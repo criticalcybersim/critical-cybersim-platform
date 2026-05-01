@@ -1,0 +1,34 @@
+# CODEOWNERS - Automatically request reviews from code owners
+
+# Default owners for everything in the repo
+* @criticalcybersim
+
+# Backend PHP/Laravel code
+/app/ @criticalcybersim
+/database/ @criticalcybersim
+/routes/ @criticalcybersim
+/config/ @criticalcybersim
+
+# Frontend React/TypeScript code
+/resources/js/ @criticalcybersim
+/resources/css/ @criticalcybersim
+
+# Security-related files
+SECURITY.md @criticalcybersim
+/.github/workflows/security.yml @criticalcybersim
+/app/Http/Middleware/ @criticalcybersim
+
+# Configuration files
+.env.example @criticalcybersim
+composer.json @criticalcybersim
+package.json @criticalcybersim
+
+# Documentation
+*.md @criticalcybersim
+/docs/ @criticalcybersim
+
+# CI/CD
+/.github/ @criticalcybersim
+
+# Database migrations (require careful review)
+/database/migrations/ @criticalcybersim

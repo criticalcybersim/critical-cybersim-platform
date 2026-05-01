@@ -25,11 +25,24 @@ interface Module {
     created_at: string;
 }
 
+interface PaginationLink {
+    url: string | null;
+    label: string;
+    active: boolean;
+}
+
+interface PaginationMeta {
+    current_page: number;
+    last_page: number;
+    per_page: number;
+    total: number;
+}
+
 interface Props {
     modules: {
         data: Module[];
-        links: any;
-        meta: any;
+        links: PaginationLink[];
+        meta: PaginationMeta;
     };
 }
 
@@ -182,7 +195,7 @@ export default function ModulesIndex({ modules }: Props) {
                             {/* Pagination */}
                             {modules.meta.last_page > 1 && (
                                 <div className="mt-6 flex items-center justify-center gap-2">
-                                    {modules.links.map((link: any, index: number) => (
+                                    {modules.links.map((link: PaginationLink, index: number) => (
                                         <Link
                                             key={index}
                                             href={link.url || '#'}

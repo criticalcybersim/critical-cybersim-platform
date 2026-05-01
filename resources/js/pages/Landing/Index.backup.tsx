@@ -39,7 +39,7 @@ interface Props {
     stats: Stats;
 }
 
-export default function LandingPage({ sectors, featuredModules, stats }: Props) {
+export default function LandingPage({ sectors, stats }: Props) {
     const { auth } = usePage<SharedData>().props;
     const isAuthenticated = !!auth.user;
 

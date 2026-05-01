@@ -89,7 +89,7 @@ export default function SectorShow({ sector, progress }: Props) {
                                     {progress.completed} of {progress.total} modules completed
                                 </span>
                             </div>
-                            <Progress value={progress.percentage} className="h-2" style={{ ['--progress-background' as any]: sector.color }} />
+                            <Progress value={progress.percentage} className="h-2" style={{ '--progress-background': sector.color } as React.CSSProperties} />
                             <p className="mt-1 text-sm text-muted-foreground">{progress.percentage}% complete</p>
                         </CardContent>
                     </Card>

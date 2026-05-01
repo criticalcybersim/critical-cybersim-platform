@@ -58,12 +58,20 @@ interface LeaderboardEntry {
     streak: number;
 }
 
+interface Achievement {
+    id: number;
+    title: string;
+    description: string;
+    icon: string;
+    earned_at: string;
+}
+
 interface Props {
     stats: Stats;
     recentSessions: Session[];
     recommendedModules: Module[];
     sectorCompletion: SectorProgress[];
-    recentAchievements: any[];
+    recentAchievements: Achievement[];
     leaderboard: LeaderboardEntry[];
 }
 
@@ -262,7 +270,7 @@ export default function DashboardPage({
                                             {sector.completed}/{sector.total}
                                         </span>
                                     </div>
-                                    <Progress value={sector.percentage} className="h-2" style={{ ['--progress-background' as any]: sector.color }} />
+                                    <Progress value={sector.percentage} className="h-2" style={{ '--progress-background': sector.color } as React.CSSProperties} />
                                 </div>
                                 ))
                             ) : (

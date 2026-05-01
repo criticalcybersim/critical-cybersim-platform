@@ -178,7 +178,7 @@ export default function AnalyticsIndex({ analytics, period }: Props) {
                                             {skill.score}% ({skill.count} modules)
                                         </span>
                                     </div>
-                                    <Progress value={skill.score} className="h-2" style={{ ['--progress-background' as any]: skill.color }} />
+                                    <Progress value={skill.score} className="h-2" style={{ '--progress-background': skill.color } as React.CSSProperties} />
                                 </div>
                                 ))
                             ) : (
@@ -203,7 +203,7 @@ export default function AnalyticsIndex({ analytics, period }: Props) {
                                             {sector.completed}/{sector.total} ({sector.percentage}%)
                                         </span>
                                     </div>
-                                    <Progress value={sector.percentage} className="h-2" style={{ ['--progress-background' as any]: sector.color }} />
+                                    <Progress value={sector.percentage} className="h-2" style={{ '--progress-background': sector.color } as React.CSSProperties} />
                                 </div>
                                 ))
                             ) : (

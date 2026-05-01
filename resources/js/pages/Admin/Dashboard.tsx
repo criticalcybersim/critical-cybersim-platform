@@ -5,9 +5,9 @@ import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link } from '@inertiajs/react';
 import { 
-    Activity, BarChart3, Shield, TrendingUp, Users, BookOpen, 
-    Award, ArrowUpRight, Plus, Eye, CheckCircle2, Sparkles, 
-    Brain, RefreshCw, Target
+    BarChart3, Shield, TrendingUp, Users, BookOpen, 
+    ArrowUpRight, Plus, Eye, CheckCircle2, Sparkles, 
+    Brain, RefreshCw
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -56,14 +56,15 @@ const breadcrumbs: BreadcrumbItem[] = [
 export default function AdminDashboard({ stats, recentUsers, popularModules, activityData }: Props) {
     const [activeTab, setActiveTab] = useState<'overview' | 'modules' | 'users'>('overview');
 
-    const aiFeatures = [
-        { icon: '🤖', title: 'AI Training Assistant', desc: 'Real-time guidance and personalized hints', color: 'purple' },
-        { icon: '🧠', title: 'Intelligent Scenarios', desc: 'Dynamic threat scenarios from real-world intel', color: 'blue' },
-        { icon: '📈', title: 'Adaptive Learning', desc: 'Personalized progression based on performance', color: 'green' },
-        { icon: '💬', title: 'Automated Feedback', desc: 'AI-generated insights on decisions', color: 'orange' },
-        { icon: '🔍', title: 'Threat Intelligence', desc: 'Live data from CISA, FBI, and industry', color: 'red' },
-        { icon: '📊', title: 'Performance Analytics', desc: 'ML-powered team readiness insights', color: 'cyan' }
-    ];
+    // Activity data for future implementation
+    // const activityData = [
+    //     { icon: '🤖', title: 'AI Training Assistant', desc: 'Real-time guidance and personalized hints', color: 'purple' },
+    //     { icon: '🧠', title: 'Intelligent Scenarios', desc: 'Dynamic threat scenarios from real-world intel', color: 'blue' },
+    //     { icon: '📈', title: 'Adaptive Learning', desc: 'Personalized progression based on performance', color: 'green' },
+    //     { icon: '💬', title: 'Automated Feedback', desc: 'AI-generated insights on decisions', color: 'orange' },
+    //     { icon: '🔍', title: 'Threat Intelligence', desc: 'Live data from CISA, FBI, and industry', color: 'red' },
+    //     { icon: '📊', title: 'Performance Analytics', desc: 'ML-powered team readiness insights', color: 'cyan' }
+    // ];
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -161,7 +162,7 @@ export default function AdminDashboard({ stats, recentUsers, popularModules, act
                         ].map((tab) => (
                             <button
                                 key={tab.id}
-                                onClick={() => setActiveTab(tab.id as any)}
+                                onClick={() => setActiveTab(tab.id)}
                                 className={`px-6 py-3 text-sm font-medium transition-all relative group ${
                                     activeTab === tab.id
                                         ? 'text-blue-400 border-b-2 border-blue-400'
@@ -173,7 +174,7 @@ export default function AdminDashboard({ stats, recentUsers, popularModules, act
                                 {activeTab === tab.id && (
                                     <div className="absolute inset-0 bg-blue-500/10 -z-10 rounded-t-lg" />
                                 )}
-                                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" style={{}} />
                             </button>
                         ))}
                     </div>
